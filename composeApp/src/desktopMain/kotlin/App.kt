@@ -98,9 +98,7 @@ fun App() {
         }
         Button(
             onClick = {
-                val selection = StringSelection(password)
-                val clipboard = Toolkit.getDefaultToolkit().systemClipboard
-                clipboard.setContents(selection, selection)
+                copyToClipboard(password)
                 password = passwordGenerator.generateRandomPassword(
                     passwordLength,
                     includeNumbers,
